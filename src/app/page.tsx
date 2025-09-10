@@ -23,7 +23,7 @@ export default function Home() {
           className="text-sm text-gray-500 dark:text-gray-500 mt-4"
           id="semana-cita-semanal"
         >
-          Semana {weeklyQuoteData.week}
+          Week {weeklyQuoteData.week}
         </p>
       </main>
     </div>
