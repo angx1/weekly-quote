@@ -25,9 +25,7 @@ Follow these steps to set up the widget on your iPhone.
 
 #### Step 1: Install Scriptable app on the AppStore
 
-<div align="center">
-  <img src="./assets/scriptableAppStore.jpg" alt="Demo Video of Widget Installation" width="40%">
-</div>
+![Scriptable App Store Page](./assets/scriptableAppStore.jpg)
 
 #### Step 2: Create a New Script
 
