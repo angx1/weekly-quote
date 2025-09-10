@@ -42,13 +42,13 @@ async function createWidget() {
   let widget = new ListWidget();
 
   widget.backgroundColor = Color.white();
-
+  widget.setPadding(30, 30, 30, 30);
   widget.addSpacer();
 
   let quoteText = widget.addText(weeklyQuote);
   quoteText.textColor = Color.black();
   quoteText.font = Font.lightMonospacedSystemFont(16);
-  quoteText.centerAlignText();
+  quoteText.leftAlignText();
 
   widget.addSpacer(8);
 
@@ -56,14 +56,14 @@ async function createWidget() {
     let authorText = widget.addText(author);
     authorText.textColor = new Color("#333333");
     authorText.font = Font.monoSystemFont(14);
-    authorText.centerAlignText();
+    authorText.leftAlignText();
     widget.addSpacer(12);
   }
 
   let weekText = widget.addText(weekInfo);
   weekText.textColor = Color.gray();
   weekText.font = Font.lightMonospacedSystemFont(10);
-  weekText.centerAlignText();
+  weekText.leftAlignText();
 
   widget.addSpacer();
 
