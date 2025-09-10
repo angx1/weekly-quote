@@ -2,6 +2,7 @@
 
 A simple project that displays a custom weekly quote on your iPhone Home Screen using a Scriptable widget. The quote is managed in this repository and served via a static Next.js site on GitHub Pages.
 <br>
+<br>
 
 ### Preview
 
@@ -37,4 +38,4 @@ Follow these steps to set up the widget on your iPhone.
 
 ### Next Steps
 
-Feel free to fork the repo and make your own version of it! If mot, I will be updating the quote weekly to give you a source of inspiration and push you further on your personal development journey.
+Feel free to fork the repo and make your own version of it! If not, I will be updating the quote weekly to give you a source of inspiration and push you further on your personal development journey.
