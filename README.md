@@ -7,7 +7,9 @@ A simple project that displays a custom weekly quote on your iPhone Home Screen 
 <!-- Add your screenshot here -->
 <!-- Example: ![Widget Preview](./images/screenshot.png) -->
 
-![Widget Preview](./assets/preview.jpg)
+<div align="center">
+  <img src="./assets/preview.jpg" alt="Demo Video of Widget Installation" width="70%">
+</div>
 
 <br>
 
@@ -23,12 +25,11 @@ A simple project that displays a custom weekly quote on your iPhone Home Screen 
 
 Follow these steps to set up the widget on your iPhone.
 
-See iPhone installation demo video:
-![Demo Video of Widget Installation](./assets/demo.mov)
-
 #### Step 1: Install Scriptable app on the AppStore
 
-![Scriptable AppStore Page](./assets/scriptableAppStore.jpg)
+<div align="center">
+  <img src="./assets/scriptableAppStore.jpg" alt="Demo Video of Widget Installation" width="40%">
+</div>
 
 #### Step 2: Create a New Script
 
