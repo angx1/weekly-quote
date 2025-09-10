@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Weekly Quote Widget
 
-## Getting Started
+A simple project that displays a custom weekly quote on your iPhone Home Screen using a Scriptable widget. The quote is managed in this repository and served via a static Next.js site on GitHub Pages.
 
-First, run the development server:
+### Preview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<!-- Add your screenshot here -->
+<!-- Example: ![Widget Preview](./images/screenshot.png) -->
+
+<br>
+
+### How It Works
+
+1.  A Next.js application builds a static HTML page containing the quote.
+2.  This static site is hosted for free using GitHub Pages.
+3.  A Scriptable widget on an iPhone fetches the HTML content of the page.
+4.  The script parses the HTML to find the quote, author, and week number.
+5.  The widget then displays this information on the Home Screen.
+
+### Installation Guide
+
+Follow these steps to set up the widget on your iPhone.
+
+<details>
+<summary>See iPhone installation demo</summary>
+</details><br/>
+
+#### Step 1: Install Scriptable app on the AppStore
+
+#### Step 2: Create a New Script
+
+1.  Open the Scriptable app.
+2.  Tap the `+` icon in the top-right corner to create a new script.
+3.  Tap on the script name at the top (e.g., "Untitled Script") and rename it to something memorable, like `Weekly Quote`.
+4.  Copy the entire code below and paste it into the script editor, replacing any existing content.
+
+<details>
+<summary>Click here to view the widget code</summary>
+
+```javascript
+const url = "https://angx1.github.io/weekly-quote/";
+
+if (config.runsInWidget) {
+  let widget = await createWidget();
+  Script.setWidget(widget);
+} else {
+  let widget = await createWidget();
+  widget.presentMedium();
+}
+Script.complete();
+
+async function createWidget() {
+  const req = new Request(url);
+  const html = await req.loadString();
+
+  let weeklyQuote = "Cita no encontrada.";
+  let author = null;
+  let weekInfo = "";
+
+  const quoteRegex =
+    /<blockquote[^>]*id="cita-semanal"[^>]*>(.*?)<\/blockquote>/s;
+  const quoteMatch = html.match(quoteRegex);
+  if (quoteMatch && quoteMatch) {
+    weeklyQuote = quoteMatch.trim();
+  }
+
+  const authorRegex = /<cite[^>]*id="autor-cita-semanal"[^>]*>(.*?)<\/cite>/s;
+  const authorMatch = html.match(authorRegex);
+  if (authorMatch && authorMatch) {
+    author = authorMatch.trim();
+  }
+
+  const weekRegex = /<p[^>]*id="semana-cita-semanal"[^>]*>(.*?)<\/p>/s;
+  const weekMatch = html.match(weekRegex);
+
+  if (weekMatch && weekMatch) {
+    let rawWeekText = weekMatch;
+    let cleanText = rawWeekText.replace(/<!--\s*-->/g, "");
+    weekInfo = cleanText.replace(/\s+/g, " ").trim();
+  }
+
+  let widget = new ListWidget();
+
+  widget.backgroundColor = Color.white();
+
+  // setPadding(top, leading, bottom, trailing)
+  widget.setPadding(15, 15, 15, 15);
+
+  widget.addSpacer();
+
+  let quoteText = widget.addText(weeklyQuote);
+  quoteText.textColor = Color.black();
+  quoteText.font = Font.lightMonospacedSystemFont(16);
+  quoteText.leftAlignText();
+
+  widget.addSpacer(8);
+
+  if (author) {
+    let authorText = widget.addText(author);
+    authorText.textColor = new Color("#333333");
+    authorText.font = Font.monoSystemFont(14);
+    authorText.leftAlignText();
+    widget.addSpacer(12);
+  }
+
+  let weekText = widget.addText(weekInfo);
+  weekText.textColor = Color.gray();
+  weekText.font = Font.lightMonospacedSystemFont(10);
+  weekText.leftAlignText();
+
+  widget.addSpacer();
+
+  return widget;
+}
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
