@@ -7,6 +7,8 @@ A simple project that displays a custom weekly quote on your iPhone Home Screen 
 <!-- Add your screenshot here -->
 <!-- Example: ![Widget Preview](./images/screenshot.png) -->
 
+![Widget Preview](./assets/IMG_0974.jpg)
+
 <br>
 
 ### How It Works
@@ -23,93 +25,16 @@ Follow these steps to set up the widget on your iPhone.
 
 <details>
 <summary>See iPhone installation demo</summary>
+![Demo Video of Widget Installation](./assets/ScreenRecording_09-10-2025%2013-09-00_1.mov)
 </details><br/>
 
 #### Step 1: Install Scriptable app on the AppStore
+
+![Scriptable AppStore Page](./assets/IMG_0973.jpg)
 
 #### Step 2: Create a New Script
 
 1.  Open the Scriptable app.
 2.  Tap the `+` icon in the top-right corner to create a new script.
 3.  Tap on the script name at the top (e.g., "Untitled Script") and rename it to something memorable, like `Weekly Quote`.
-4.  Copy the entire code below and paste it into the script editor, replacing any existing content.
-
-<details>
-<summary>Click here to view the widget code</summary>
-
-```javascript
-const url = "https://angx1.github.io/weekly-quote/";
-
-if (config.runsInWidget) {
-  let widget = await createWidget();
-  Script.setWidget(widget);
-} else {
-  let widget = await createWidget();
-  widget.presentMedium();
-}
-Script.complete();
-
-async function createWidget() {
-  const req = new Request(url);
-  const html = await req.loadString();
-
-  let weeklyQuote = "Cita no encontrada.";
-  let author = null;
-  let weekInfo = "";
-
-  const quoteRegex =
-    /<blockquote[^>]*id="cita-semanal"[^>]*>(.*?)<\/blockquote>/s;
-  const quoteMatch = html.match(quoteRegex);
-  if (quoteMatch && quoteMatch) {
-    weeklyQuote = quoteMatch.trim();
-  }
-
-  const authorRegex = /<cite[^>]*id="autor-cita-semanal"[^>]*>(.*?)<\/cite>/s;
-  const authorMatch = html.match(authorRegex);
-  if (authorMatch && authorMatch) {
-    author = authorMatch.trim();
-  }
-
-  const weekRegex = /<p[^>]*id="semana-cita-semanal"[^>]*>(.*?)<\/p>/s;
-  const weekMatch = html.match(weekRegex);
-
-  if (weekMatch && weekMatch) {
-    let rawWeekText = weekMatch;
-    let cleanText = rawWeekText.replace(/<!--\s*-->/g, "");
-    weekInfo = cleanText.replace(/\s+/g, " ").trim();
-  }
-
-  let widget = new ListWidget();
-
-  widget.backgroundColor = Color.white();
-
-  // setPadding(top, leading, bottom, trailing)
-  widget.setPadding(15, 15, 15, 15);
-
-  widget.addSpacer();
-
-  let quoteText = widget.addText(weeklyQuote);
-  quoteText.textColor = Color.black();
-  quoteText.font = Font.lightMonospacedSystemFont(16);
-  quoteText.leftAlignText();
-
-  widget.addSpacer(8);
-
-  if (author) {
-    let authorText = widget.addText(author);
-    authorText.textColor = new Color("#333333");
-    authorText.font = Font.monoSystemFont(14);
-    authorText.leftAlignText();
-    widget.addSpacer(12);
-  }
-
-  let weekText = widget.addText(weekInfo);
-  weekText.textColor = Color.gray();
-  weekText.font = Font.lightMonospacedSystemFont(10);
-  weekText.leftAlignText();
-
-  widget.addSpacer();
-
-  return widget;
-}
-```
+4.  Copy the entire code from ![Widget Source Code](./script.js) into the script editor, replacing any existing content.
