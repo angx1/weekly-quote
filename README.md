@@ -7,9 +7,7 @@ A simple project that displays a custom weekly quote on your iPhone Home Screen 
 <!-- Add your screenshot here -->
 <!-- Example: ![Widget Preview](./images/screenshot.png) -->
 
-<div align="center">
-  <img src="./assets/preview.jpg" alt="Demo Video of Widget Installation" width="70%">
-</div>
+![Widget Preview](./assets/preview.jpg)
 
 <br>
 
