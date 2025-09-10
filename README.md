@@ -37,4 +37,4 @@ Follow these steps to set up the widget on your iPhone.
 1.  Open the Scriptable app.
 2.  Tap the `+` icon in the top-right corner to create a new script.
 3.  Tap on the script name at the top (e.g., "Untitled Script") and rename it to something memorable, like `Weekly Quote`.
-4.  Copy the entire code from ![Widget Source Code](./script.js) into the script editor, replacing any existing content.
+4.  Copy the entire code here: [Widget Source Code](./script.js) into the script editor, replacing any existing content.
