@@ -6,9 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // GitHub Pages necesita basePath para repositorios que no son username.github.io
-  basePath: "/weekly-quote",
-  assetPrefix: "/weekly-quote/",
+  // No usar basePath - GitHub Pages ya sirve desde /weekly-quote/
+  // Solo usar assetPrefix si es necesario para assets estáticos
 };
 
 export default nextConfig;
