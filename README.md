@@ -1,6 +1,8 @@
-## Weekly Quote Widget
+## Weekly Updated Quote Widget
 
+```
 A simple project that displays a custom weekly quote on your iPhone Home Screen using a Scriptable widget. The quote is managed in this repository and served via a static Next.js site on GitHub Pages.
+```
 
 ### Preview
 
@@ -33,3 +35,7 @@ Follow these steps to set up the widget on your iPhone.
 2.  Tap the `+` icon in the top-right corner to create a new script.
 3.  Tap on the script name at the top (e.g., "Untitled Script") and rename it to something memorable, like `Weekly Quote`.
 4.  Copy the entire code here: [Widget Source Code](./script.js) into the script editor, replacing any existing content.
+
+### Next Steps
+
+Feel free to fork the repo and make your own version of it! If mot, I will be updating the quote weekly to give you a source of inspiration and push you further on your personal development journey.
