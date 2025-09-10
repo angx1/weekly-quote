@@ -25,7 +25,7 @@ Follow these steps to set up the widget on your iPhone.
 
 <details>
 <summary>See iPhone installation demo</summary>
-./assets/ScreenRecording_09-10-2025 13-09-00_1.mov
+[Demo Video of Widget Installation](./assets/ScreenRecording_09-10-2025%2013-09-00_1.mov)
 </details><br/>
 
 #### Step 1: Install Scriptable app on the AppStore
