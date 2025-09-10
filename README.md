@@ -1,6 +1,7 @@
 ## Weekly Updated Quote Widget
 
 A simple project that displays a custom weekly quote on your iPhone Home Screen using a Scriptable widget. The quote is managed in this repository and served via a static Next.js site on GitHub Pages.
+<br>
 
 ### Preview
 
