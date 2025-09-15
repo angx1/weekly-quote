@@ -41,7 +41,7 @@ async function createWidget() {
 
   let widget = new ListWidget();
   widget.backgroundColor = Color.white();
-  widget.setPadding(15, 15, 15, 15);
+  widget.setPadding(30, 30, 30, 30);
 
   widget.addSpacer();
 

@@ -2,6 +2,9 @@ import Image from "next/image";
 import weeklyQuoteData from "../../public/data/weekly_quote.json";
 
 export default function Home() {
+  console.log("Weekly quote data:", weeklyQuoteData);
+  console.log("Past quotes:", weeklyQuoteData.past_quotes);
+
   return (
     <div className="--font-geist-mono grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -19,12 +22,19 @@ export default function Home() {
             — {weeklyQuoteData.author}
           </cite>
         ) : null}
-        <p
-          className="text-sm text-gray-500 dark:text-gray-500 mt-4"
-          id="semana-cita-semanal"
-        >
-          Week {weeklyQuoteData.week}
-        </p>
+        <div className="text-sm text-gray-500 dark:text-gray-500 mt-4 space-y-1">
+          <p id="semana-cita-semanal">{weeklyQuoteData.date}</p>
+          {weeklyQuoteData.video_url && (
+            <a
+              href={weeklyQuoteData.video_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline"
+            >
+              Ver en YouTube
+            </a>
+          )}
+        </div>
 
         {weeklyQuoteData.past_quotes &&
           weeklyQuoteData.past_quotes.length > 0 && (
@@ -46,9 +56,19 @@ export default function Home() {
                         — {pastQuote.author}
                       </p>
                     )}
-                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                      Week {pastQuote.week}
-                    </p>
+                    <div className="text-xs text-gray-400 dark:text-gray-500 mt-1 space-y-1">
+                      <p>{pastQuote.date}</p>
+                      {pastQuote.video_url && (
+                        <a
+                          href={pastQuote.video_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                        >
+                          Ver en YouTube
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
