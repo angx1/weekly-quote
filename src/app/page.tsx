@@ -25,6 +25,35 @@ export default function Home() {
         >
           Week {weeklyQuoteData.week}
         </p>
+
+        {weeklyQuoteData.past_quotes &&
+          weeklyQuoteData.past_quotes.length > 0 && (
+            <div className="mt-8 w-full max-w-2xl">
+              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-4">
+                Past Quotes
+              </h3>
+              <div className="space-y-3">
+                {weeklyQuoteData.past_quotes.map((pastQuote, index) => (
+                  <div
+                    key={index}
+                    className="border-l-2 border-gray-200 dark:border-gray-700 pl-4"
+                  >
+                    <p className="text-sm text-gray-600 dark:text-gray-300 italic">
+                      {pastQuote.quote}
+                    </p>
+                    {pastQuote.author && (
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                        — {pastQuote.author}
+                      </p>
+                    )}
+                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+                      Week {pastQuote.week}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
       </main>
     </div>
   );

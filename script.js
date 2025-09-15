@@ -40,15 +40,24 @@ async function createWidget() {
   }
 
   let widget = new ListWidget();
-
   widget.backgroundColor = Color.white();
-  widget.setPadding(30, 30, 30, 30);
+  widget.setPadding(15, 15, 15, 15);
+
   widget.addSpacer();
+
+  let baseFontSize = 14;
+  if (weeklyQuote.length < 50) {
+    baseFontSize = 18;
+  } else if (weeklyQuote.length < 100) {
+    baseFontSize = 16;
+  }
 
   let quoteText = widget.addText(weeklyQuote);
   quoteText.textColor = Color.black();
-  quoteText.font = Font.lightMonospacedSystemFont(16);
+  quoteText.font = Font.lightMonospacedSystemFont(baseFontSize);
   quoteText.leftAlignText();
+  quoteText.minimumScaleFactor = 0.6;
+  quoteText.lineLimit = 5;
 
   widget.addSpacer(8);
 
