@@ -4,5 +4,13 @@
   "week": "1",
   "date": "2025-09-14",
   "video_url": "https://youtu.be/wSaGkeeN8HU?si=kLlf8xVnPZhocvMm",
-  "past_quotes": [{}]
+  "past_quotes": [
+    {
+      "quote": "",
+      "author": "",
+      "week": "",
+      "date": "",
+      "video_url": ""
+    }
+  ]
 }
