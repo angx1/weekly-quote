@@ -38,8 +38,8 @@ export default function Home() {
 
         {weeklyQuoteData.past_quotes &&
           weeklyQuoteData.past_quotes.length > 0 && (
-            <div className="mt-8 w-full max-w-2xl">
-              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-4">
+            <div className="mt-8 w-full max-w-2xl border-2 border-gray-200 dark:border-gray-700 rounded-md p-4">
+              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-4 border-b border-black pb-2">
                 Past Quotes
               </h3>
               <div className="space-y-3">
