@@ -39,7 +39,7 @@ export default function Home() {
         {weeklyQuoteData.past_quotes &&
           weeklyQuoteData.past_quotes.length > 0 && (
             <div className="mt-8 w-full max-w-2xl border-1 border-gray-200 dark:border-gray-700 rounded-xl p-4">
-              <h3 className="text-sm font-medium text-gray-600 underline underline-offset-4">
+              <h3 className="text-sm font-medium text-gray-600 underline underline-offset-4 mb-8">
                 Past Quotes
               </h3>
               <div className="space-y-3">
