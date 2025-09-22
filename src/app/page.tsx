@@ -31,15 +31,15 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-xs text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline"
             >
-              Ver en YouTube
+              See in YouTube
             </a>
           )}
         </div>
 
         {weeklyQuoteData.past_quotes &&
           weeklyQuoteData.past_quotes.length > 0 && (
-            <div className="mt-8 w-full max-w-2xl border-2 border-gray-200 dark:border-gray-700 rounded-md p-4">
-              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-4 border-b border-black pb-2">
+            <div className="mt-8 w-full max-w-2xl border-1 border-gray-200 dark:border-gray-700 rounded-xl p-4">
+              <h3 className="text-sm font-medium text-gray-600 underline underline-offset-4">
                 Past Quotes
               </h3>
               <div className="space-y-3">
@@ -65,7 +65,7 @@ export default function Home() {
                           rel="noopener noreferrer"
                           className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline"
                         >
-                          Ver en YouTube
+                          See in YouTube
                         </a>
                       )}
                     </div>
