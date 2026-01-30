@@ -1,23 +1,30 @@
 {
-  "quote": "Make it happen.",
+  "quote": "Hold the vision, trust the process.",
   "author": "",
-  "week": "3",
-  "date": "2025-10-15",
-  "video_url": "https://www.youtube.com/watch?v=9uoJs50Vr7U",
+  "week": "4",
+  "date": "2026-01-31",
+  "video_url": "",
   "past_quotes": [
+    {
+      "quote": "Make it happen.",
+      "author": "",
+      "week": "3",
+      "date": "2025-10-15",
+      "video_url": ""
+    },
     {
       "quote": "Move with intention.",
       "author": "",
       "week": "2",
       "date": "2025-09-22",
-      "video_url": "https://youtu.be/HljH48hi-sg?si=qcFhHkpDslLV_Xhl"
+      "video_url": ""
     },
     {
       "quote": "Create the things you wish existed.",
       "author": "",
       "week": "1",
       "date": "2025-09-14",
-      "video_url": "https://youtu.be/wSaGkeeN8HU?si=kLlf8xVnPZhocvMm"
+      "video_url": ""
     }
   ]
 }
